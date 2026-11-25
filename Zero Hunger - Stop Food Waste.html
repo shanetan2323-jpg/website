@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)file:///C:/Users/SimLeeWei/Desktop/SDG2_%20Zerohunger/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>Zero Hunger - Stop Food Waste</title>
+    <!-- 這裡連結等一下要做的 CSS 美化檔案 -->
+    <link rel="stylesheet" href="./Zero Hunger - Stop Food Waste_files/style.css">			       <style>
+        .box button {
+            background-color: #ffffff;
+            color: #8a5a00;
+            border: 1.5px solid #d49a2a;
+            padding: 8px 15px;
+            margin-right: 8px;
+            margin-top: 8px;
+            border-radius: 6px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .box button:hover {
+            background-color: #d49a2a;
+            color: #ffffff;
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- 網站頂部大標題 -->
+    <header>
+        <h1>🍲 Reducing Food Waste to End Hunger</h1>
+        <p>By: Tan Yi Thong 3A2</p>
+    </header>
+
+    <!-- 4 個分頁按鈕（點擊會呼叫 JavaScript 切換畫面） -->
+    <nav class="tab-nav">
+        <button class="tab-btn active" onclick="openTab(event, 'tab1')">1. The Reality</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab2')">2. Root Causes</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab3')">3. Take Action</button>
+        <button class="tab-btn" onclick="openTab(event, 'tab4')">4. Quiz &amp; Feedback</button>
+    </nav>
+
+    <main>
+        <!-- 分頁 1：現況（需要你上網找數據填入） -->
+        <section id="tab1" class="tab-content active">
+            <h2>1. The Reality of Food Waste</h2>
+            <p>In Malaysia, thousands of tonnes of food are wasted every day.</p>
+            
+            <!-- 【你的任務 1】：上網搜尋馬來西亞食物浪費數據，替換下面的文字 -->
+            <div class="box">
+                <h3>📊 Malaysia Statistics</h3>
+                <p>Daily food waste in Malaysia: <strong>17,000 tonnes </strong></p>
+                <p>Edible food wasted daily: <strong>4,000 tonnes</strong></p>
+            </div>
+        <img src="./Zero Hunger - Stop Food Waste_files/food1.jpg" alt="Food Waste" style="width: 100%; max-width: 500px; border-radius: 8px; margin-top: 15px;">
+
+        <p style="font-size: 0.85em; color: #666;">Source: SWCorp Malaysia</p>
+    </section>
+
+        <!-- 分頁 2：造成原因 -->
+        <section id="tab2" class="tab-content">
+            <h2>2. Root Causes of Hunger &amp; Food Waste</h2>
+            <ul>
+                <li><strong>Over-buying:</strong> Buying too much food without planning.</li>
+                <li><strong>Ugly Food:</strong> Throwing away fruits or vegetables just because of their shape.</li>
+                <li><strong>Over Cooking:</strong> Cooking too much and throwing away the leftovers.</li>
+                <li><strong>Taking Too Much:</strong>Taking too much in buffet and throwing away the leftovers</li>
+            </ul>
+        </section>
+
+        <!-- 分頁 3：行動與馬來西亞食物銀行 -->
+        <section id="tab3" class="tab-content">
+            <h2>3. Take Action &amp; Local Food Banks</h2>
+            <p>Students can help by taking only what they can finish at the school canteen.</p>
+            
+            <!-- 【你的任務 3】：上網找兩個馬來西亞食物銀行（例如 The Lost Food Project）填入 -->
+            <div class="box">
+                <h3>🇲🇾 Food Banks in Malaysia</h3>
+                <p>1. <strong>Yayasan Food Bank Malaysia </strong>: Choose and redistribute fresh vegetables and fruits from wholesale markets to people in need.</p>
+                <p>2. <strong> Kechara Soup Kitchen</strong>:Distributes hot,scrumptious meals to the homeless. </p>
+            </div> 
+     <img src="./Zero Hunger - Stop Food Waste_files/food2.jpg" alt="Food Bank" style="width: 100%; max-width: 500px; border-radius: 8px; margin-top: 15px;">
+        
+        </section>
+
+        <!-- 分頁 4：互動測驗與意見回饋表單（老師規定必須有的功能） -->
+        <section id="tab4" class="tab-content">
+            <h2>4. Quick Quiz &amp; Visitor Feedback</h2>
+            
+            <!-- 互動小測驗 -->
+            <div class="box">
+                <p><strong>Quiz:</strong> Should we throw away food immediately after the "Best Before" date?</p>
+                <button type="button" onclick="checkAnswer(false)">Yes, always</button>
+                <button type="button" onclick="checkAnswer(true)">No, check smell and look first</button>
+                <p id="quiz-msg"></p>
+            </div>
+
+            <!-- 意見回饋表單 -->
+            <h3>💬 Visitor Feedback Form</h3>
+            <form onsubmit="sendFeedback(event)">
+                <label>Your Name:</label><br>
+                <input type="text" id="userName" required="" placeholder="Type your name"><br><br>
+
+                <label>Your Suggestion to Reduce Food Waste:</label><br>
+                <textarea id="userComment" rows="4" required="" placeholder="Write your message here..."></textarea><br><br>
+
+                <button type="submit">Submit Feedback</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- 這裡連結等一下要做的 JavaScript 互動檔案 -->
+    <script src="./Zero Hunger - Stop Food Waste_files/script.js"></script>
+
+
+</body></html>
