@@ -1,96 +1,117 @@
-/* 1. 設定整個網頁的字體與背景顏色 */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background-color: #fffdf7; /* 淡淡的米黃色背景 */
-    color: #333;
+// 功能 1：點擊上方按鈕時，切換顯示對應的分頁
+
+function openTab(evt, tabId) {
+
+    // 找出所有分頁內容
+
+    const contents = document.getElementsByClassName("tab-content");
+
+    // 隱藏所有分頁
+
+    for (let i = 0; i < contents.length; i++) {
+
+        contents[i].classList.remove("active");
+
+    }
+
+    // 找出所有分頁按鈕
+
+    const buttons = document.getElementsByClassName("tab-btn");
+
+    // 移除所有按鈕的 active 狀態
+
+    for (let i = 0; i < buttons.length; i++) {
+
+        buttons[i].classList.remove("active");
+
+    }
+
+    // 顯示所選擇的分頁
+
+    const selectedTab = document.getElementById(tabId);
+
+    if (selectedTab) {
+
+        selectedTab.classList.add("active");
+
+    }
+
+    // 將目前按鈕設為 active
+
+    if (evt && evt.currentTarget) {
+
+        evt.currentTarget.classList.add("active");
+
+    }
+
 }
 
-/* 2. 頂部標題區塊（使用 SDG 2 的代表色：暖橘黃色） */
-header {
-    background-color: #dda63a;
-    color: white;
-    text-align: center;
-    padding: 25px;
+// 功能 2：第 4 分頁「互動小測驗」的對錯判斷
+
+function checkAnswer(isCorrect) {
+
+    const msg = document.getElementById("quiz-msg");
+
+    if (!msg) {
+
+        return;
+
+    }
+
+    if (isCorrect) {
+
+        msg.style.color = "green";
+
+        msg.innerHTML =
+
+            "✅ Correct! 'Best Before' is about quality, not safety.";
+
+    } else {
+
+        msg.style.color = "red";
+
+        msg.innerHTML =
+
+            "❌ Incorrect! Try again. Throwing it away immediately causes unnecessary waste.";
+
+    }
+
 }
 
-/* 3. 4 個分頁導覽列（深灰色橫條） */
-.tab-nav {
-    background-color: #333;
-    text-align: center;
+// 功能 3：第 4 分頁「意見回饋表單」送出後的互動提示
+
+function sendFeedback(event) {
+
+    // 阻止表單重新載入網頁
+
+    event.preventDefault();
+
+    const nameInput = document.getElementById("userName");
+
+    if (!nameInput) {
+
+        return;
+
+    }
+
+    const name = nameInput.value.trim();
+
+    // 顯示感謝訊息
+
+    alert(
+
+        "Thank you, " +
+
+        name +
+
+        "! Your feedback has been submitted."
+
+    );
+
+    // 清空表單
+
+    event.target.reset();
+
 }
 
-/* 分頁按鈕的樣子 */
-.tab-btn {
-    background-color: #333;
-    color: white;
-    border: none;
-    padding: 14px 20px;
-    font-size: 16px;
-    cursor: pointer; /* 滑鼠移過去變成手指圖示 */
-}
-
-/* 滑鼠移到按鈕上時變色 */
-.tab-btn:hover {
-    background-color: #555;
-}
-
-/* 目前正在看的分頁按鈕，變成深金色 */
-.tab-btn.active {
-    background-color: #b8821e;
-    font-weight: bold;
-}
-
-/* 4. 網頁中間主要內容區 */
-main {
-    max-width: 800px;
-    margin: 20px auto; /* 讓內容置中對齊 */
-    padding: 0 15px;
-}
-
-/* 預設把所有分頁內容先「隱藏」起來 */
-.tab-content {
-    display: none;
-    background-color: white;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 淡淡的立體陰影 */
-}
-
-/* 只有加上 active 的那個分頁才會「顯示」出來 */
-.tab-content.active {
-    display: block;
-}
-
-/* 5. 重點資訊框框（數據、食物銀行、測驗區） */
-.box {
-    background-color: #fff8e7;
-    border-left: 5px solid #dda63a; /* 左邊加一條橘黃色粗線 */
-    padding: 15px;
-    margin: 15px 0;
-    border-radius: 4px;
-}
-
-/* 6. 表單輸入框與送出按鈕美化 */
-input, textarea {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
-
-button[type="submit"] {
-    background-color: #dda63a;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    font-size: 16px;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #b8821e;
-}
+ 
